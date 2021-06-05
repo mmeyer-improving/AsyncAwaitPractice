@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model AsyncAwaitPractice.ViewModels.ApiViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Async/Await Practice</h1>
+</div>
+<div>
+    <p>Random Number: @Model.RandomNumber</p>
+    <p>Chuck Norris Joke: @Model.Punchline.Joke</p>
+    <div>Eric's List of Dead People: 
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Start of Reign</th>
+                <th>End of Reign</th>
+            </tr>
+            @foreach (var seleucid in Model.SeleucidList.Seleucids)
+            {
+                <tr>
+                    <td>@seleucid.Name</td>
+                    <td>@seleucid.StartReign B.C.E.</td>
+                    <td>@seleucid.EndReign B.C.E.</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
